@@ -1,9 +1,14 @@
 import './App.css';
+import CreateTweet from './components/CreateTweet';
+import TweetList from './components/TweetList';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola</h1>
+      <h1>Bienvenido a </h1>
+      < CreateTweet/>
+      < TweetList />
     </div>
   );
 }

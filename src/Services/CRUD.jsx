@@ -34,7 +34,7 @@ export const deleteData = async (col, id) =>{
 }
 
 // Suscribe data
-export const suscribetData = async (col, callback) =>{
+export const getSuscription = async (col, callback) =>{
     collectionRef = getCollectionRef(col)
     const unsuscribe = onSnapshot(collectionRef, callback);
     return unsuscribe
