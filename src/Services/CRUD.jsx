@@ -1,41 +1,65 @@
-import { db } from './firebase';
-import {collection, doc, getDocs, addDoc, updateDoc, deleteDoc, onSnapshot} from "firebase/firestore"
+import { db } from "./firebase";
+import {
+  collection,
+  doc,
+  getDocs,
+  getDoc,
+  addDoc,
+  setDoc,
+  updateDoc,
+  deleteDoc,
+  onSnapshot,
+} from "firebase/firestore";
 
-// Funcion helper
-const getDocRef = (col, id) => doc(db, col, id)
-const getCollectionRef = (col) => collection(db, col )
+export const getDocRef = (col, id) => doc(db, col, id);
 
-// Get data
-export const getData = async (col) =>{
-    const collectionRef = getCollectionRef(col)
-    const snapData = await getDocs(collectionRef)
-    const data = snapData.map(doc => doc.data())
-    return data
-}
+const getCollectionRef = (col) => collection(db, col);
 
-// Set data
-export const setData = async (col, data) =>{
-    const collectionRef = getCollectionRef(col)
-    // Se crea un nuevo docuento que se llena con collectionRef y data. Como es promesa, se espera con await
-    const docRef = await addDoc(collectionRef, data)
-    return docRef
-}
+//get data
+export const getData = async (col) => {
+  const collectionRef = getCollectionRef(col);
+  const snapData = await getDocs(collectionRef);
+  const data = snapData.map((doc) => doc.data());
+  return data;
+};
+//get Data by ID
+export const getDataById = async (col, id) => {
+  const docRef = getDocRef(col, id);
+  const snapData = await getDoc(docRef);
+  const data = snapData.data();
+  return data;
+};
 
-// Update data
-export const updateData = async (col, id, data) =>{
-    const docRef = getDocRef(col, id);
-    await updateDoc(docRef, data)
-}
+//set data
+export const setData = async (col, data) => {
+  const collectionRef = getCollectionRef(col);
+  const docRef = await addDoc(collectionRef, data);
+  return docRef;
+};
 
-// Delete data 
-export const deleteData = async (col, id) =>{
-    const docRef = getDocRef(col, id);
-    await deleteDoc(docRef);
-}
+//set Document
+export const setDocument = async (col, id, data) => {
+  const docRef = getDocRef(col, id);
+  const docSnapshot = await setDoc(docRef, data);
+  return docSnapshot;
+};
 
-// Suscribe data
-export const getSuscription = async (col, callback) =>{
-    const collectionRef = getCollectionRef(col)
-    const unsuscribe = onSnapshot(collectionRef, callback);
-    return unsuscribe
-}
+//update data
+export const updateData = async (col, id, data) => {
+  const docRef = getDocRef(col, id);
+  await updateDoc(docRef, data);
+};
+
+//dalete data
+export const deleteData = async (col, id) => {
+  const docRef = getDocRef(col, id);
+  await deleteDoc(docRef);
+};
+
+//subscribe to data
+export const getSuscription = async (col, callback) => {
+  const collectionRef = getCollectionRef(col);
+  //const unsubscribe = onSnapshot(collectionRef, callback);
+  const unsubscribe = await onSnapshot(collectionRef, callback);
+  return unsubscribe;
+};
