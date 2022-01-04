@@ -6,9 +6,9 @@ import TweetList from './components/TweetList';
 function App() {
   return (
     <div className="App">
-      <h1>Bienvenido a </h1>
-      < CreateTweet/>
-      < TweetList />
+      <h1>Bienvenido a Twitter</h1>
+      <CreateTweet/>
+      <TweetList />
     </div>
   );
 }
