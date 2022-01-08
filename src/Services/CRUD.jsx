@@ -57,7 +57,7 @@ export const deleteData = async (col, id) => {
 };
 
 //subscribe to data
-export const getSuscription = async (col, callback) => {
+export const getSubscription = async (col, callback) => {
   const collectionRef = getCollectionRef(col);
   //const unsubscribe = onSnapshot(collectionRef, callback);
   const unsubscribe = await onSnapshot(collectionRef, callback);

@@ -3,11 +3,15 @@ import Tweet from "../Tweet";
 import useTweet from "../Hooks/useTweets";
 
 const TweetList = () => {
-   const tweets = useTweet()
+  const tweets = useTweet();
 
-    return <div>
-        {tweets.map((tweet) => (<Tweet{...tweet} key={tweet.id} />))}
+  return (
+    <div>
+      {tweets.map((tweet) => (
+        <Tweet {...tweet} key={tweet.id} />
+      ))}
     </div>
+  );
 };
 
 export default TweetList;
