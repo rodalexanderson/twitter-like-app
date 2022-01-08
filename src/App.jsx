@@ -1,55 +1,27 @@
+import { useContext } from "react";
 import "./App.css";
 import CreateTweet from "./components/CreateTweet";
+import SignInEmail from "./components/SignInEmail";
 import TweetList from "./components/TweetList";
-import { CreateUser, SignOut, SignIn } from "./Services/Authentication";
-import useInput from "./components/Hooks/useInput";
-import { useState } from "react";
-import { signOut } from "firebase/auth";
+import { userContext } from "./context/userProvider";
+import SignInGoogle from "./components/SignInGoogle";
+import SignOutGoogle from "./components/SignOutGoogle";
+import { SignOut } from "./Services/authentication";
+
 
 function App() {
-  const [email, handleEmail] = useInput("");
-  const [password, handlePassword] = useInput("");
-  const [userState, setUserState] = useState(null);
-  const createNewUser = async () => {
-    const usuario = await CreateUser(email, password)
-    setUserState(usuario)
-  }
-  const logIn = async () => {
-    const usuario = await SignIn(email, password)
-    setUserState(usuario)
-  }
-
-  const logOut = async () => {
-    await SignOut();
-    setUserState(null)
-  }
+ const user = useContext(userContext)
 
   return (
     <div className="App">
-        {userState ? (
-          <button onClick={()=>logOut()}>Salir</button>
-        ) : (<div>
-            <input
-          type="email"
-          placeholder=""
-          value={email}
-          onChange={handleEmail}
-        />
-        <input
-          type="password"
-          placeholder=""
-          value={password}
-          onChange={handlePassword}
-        />
-        <button onClick={()=>createNewUser()}>
-          Crear usuario
-        </button>
-        <button onClick={()=>logIn()}> Ingresar </button>
-        </div>)}
-      
+      {user ? (<>
+      <SignOutGoogle />
       <h1>Bienvenido a Twitter</h1>
       <CreateTweet />
       <TweetList />
+      </>) : (<SignInGoogle /> ) }
+      
+      
     </div>
   );
 }
