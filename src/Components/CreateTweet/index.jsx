@@ -1,28 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { userContext } from "../../context/userProvider";
 import { setData } from "../../Services/CRUD";
 import useInput from "../Hooks/useInput";
 
 const CreateTweet = () => {
   const [tweet, handleTweet] = useInput();
-  const [user, handleUser] = useInput();
+  const {email} = useContext(userContext);
+
   const handleCreate = async () => {
-    await setData("tweets", { user, tweet });
+    await setData("tweets", { user: email, tweet });
   };
   return (
     <form>
-      <input
-        type="text"
-        placeholder="Escribe tu nombre...."
-        onChange={handleUser}
-        value={user}
-      />
-      <input
+      <textarea
         type="text"
         placeholder="Escribe tu tweet...."
         onChange={handleTweet}
         value={tweet}
       />
-      <button onClick={handleCreate}>Post Tweet</button>
+      <button onClick={handleCreate}> Crear Tweet</button>
     </form>
   );
 };
