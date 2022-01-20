@@ -4,14 +4,14 @@ import { setData } from "../../Services/CRUD";
 import useInput from "../Hooks/useInput";
 
 const CreateTweet = () => {
+  const { email } = useContext(userContext);
   const [tweet, handleTweet] = useInput();
-  const {email} = useContext(userContext);
 
   const handleCreate = async () => {
     await setData("tweets", { user: email, tweet });
   };
   return (
-    <form>
+    <div>
       <textarea
         type="text"
         placeholder="Escribe tu tweet...."
@@ -19,7 +19,7 @@ const CreateTweet = () => {
         value={tweet}
       />
       <button onClick={handleCreate}> Crear Tweet</button>
-    </form>
+    </div>
   );
 };
 

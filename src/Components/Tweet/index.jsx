@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteData, updateData } from "../../Services/CRUD";
 
+
 const Tweet = ({ user, tweet, id, likes }) => {
   const handleDelete = async () => {
     await deleteData("tweets", id);
