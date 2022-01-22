@@ -16,10 +16,10 @@ const SignInGoogle = () => {
                     <div className="button">
                         <img src={Google} alt="google icon" className="google" />
                         <button onClick={signInGoogle}>
-                            Sign In With Google
+                            <p className="textobtnsignin">Sign In With Google</p>
                         </button>
                     </div>
-                    <h4>© 2020 Devs_United - <span className="spanred"><b>BETA</b> </span> </h4>
+                    <p className="copyright">© 2020 Devs_United - <span className="spanred"><b>BETA</b> </span> </p>
                 </div>   
             </div>
         </div>

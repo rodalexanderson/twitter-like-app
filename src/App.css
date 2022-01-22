@@ -65,10 +65,19 @@ button{
   height: 58px;
   background-color: #4285F4;
 }
+.textobtnsignin{
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
 .google{
   width: 58px;
   height: 56px;
   background-color: white;
+}
+.copyright{
+  color: #60265B;
+  padding-top: 30%;
 }
 .spanred{
   color: red;
