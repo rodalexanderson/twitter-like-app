@@ -2,3 +2,74 @@
   text-align: center;
 }
 
+html, body, #root, .App {
+  height: 100%;
+}
+
+@font-face{
+  font-family: 'Silkscreen';
+  src: local('Silkscreen'), url(./multimedia/fonts/silkscreen/slkscr.ttf) format('truetype');
+}
+
+/* Es la seccion de HOME - Sign In  */
+
+/* signin hace referencia a toda la pagina */
+.signin{
+  width: 100%;
+  background-color: #2E132C;
+  text-align: left;
+  color: #FFFF;
+  font-family: Silkscreen;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
+/* Left Side of Sign In Page */
+.logo{
+  height: 342px;
+  width: 526px;
+  left: 97px;
+  padding-top: 200px;
+  border-radius: 0px;
+}
+
+/* Right Side of Sign In Page */
+.rightsigninmaxwidth{
+  width: 433px;
+  padding-top: 35%;
+}
+.h1signin{
+  font-family: Silkscreen;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: left;
+}
+.h2signin{
+  font-size: medium;
+}
+.button{
+  display: flex;
+}
+button{
+  display: inline;
+  width: 385px;
+  height: 58px;
+  background-color: #4285F4;
+}
+.google{
+  width: 58px;
+  height: 56px;
+  background-color: white;
+}
+.spanred{
+  color: red;
+}
