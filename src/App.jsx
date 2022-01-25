@@ -1,22 +1,17 @@
 import { useContext } from "react";
 import "./App.css";
-import CreateTweet from "./components/CreateTweet";
-import TweetList from "./components/TweetList";
 import { userContext } from "./context/userProvider";
+import Home  from "./components/Home";
 import SignInGoogle from "./components/SignInGoogle";
-import SignOutGoogle from "./components/SignOutGoogle";
+// import Registrer from "./components/Registrer";
 
 function App() {
  const user = useContext(userContext)
 
   return (
     <div className="App">
-      {user ? (<>
-      <SignOutGoogle />
-      <h1>Bienvenido a Twitter</h1>
-      <CreateTweet />
-      <TweetList />
-      </>) : (<SignInGoogle /> ) }
+      {user ? <Home />  : (<SignInGoogle /> ) }
+      {/* <Registrer/> */}
     </div>
   );
 }

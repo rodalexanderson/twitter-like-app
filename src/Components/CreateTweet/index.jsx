@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { userContext } from "../../context/userProvider";
 import { setData } from "../../Services/CRUD";
-import useInput from "../Hooks/useInput";
+import useInput from "../../Hooks/useInput";
 
 const CreateTweet = () => {
   const { email } = useContext(userContext);

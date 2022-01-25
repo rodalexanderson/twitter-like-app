@@ -15,7 +15,7 @@ const SignInGoogle = () => {
                     <h2 className="h2signin">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
                     <div className="button">
                         <img src={Google} alt="google icon" className="google" />
-                        <button onClick={signInGoogle}>
+                        <button onClick={signInGoogle} className="btngoogle">
                             <p className="textobtnsignin">Sign In With Google</p>
                         </button>
                     </div>

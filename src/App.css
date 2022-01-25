@@ -1,3 +1,8 @@
+@font-face{
+  font-family: 'Silkscreen';
+  src: local('Silkscreen'), url(./multimedia/fonts/silkscreen/slkscr.ttf) format('truetype');
+}
+
 .App {
   text-align: center;
 }
@@ -5,13 +10,15 @@
 html, body, #root, .App {
   height: 100%;
 }
-
-@font-face{
-  font-family: 'Silkscreen';
-  src: local('Silkscreen'), url(./multimedia/fonts/silkscreen/slkscr.ttf) format('truetype');
+button{
+  cursor: pointer;
+}
+button:hover{
+  border: white;
+  border: 10px;
 }
 
-/* Es la seccion de HOME - Sign In  */
+/* Es la seccion de Sign In  */
 
 /* signin hace referencia a toda la pagina */
 .signin{
@@ -60,7 +67,7 @@ html, body, #root, .App {
   display: flex;
   padding-top: 8%;
 }
-button{
+.btngoogle{
   display: inline;
   width: 385px;
   height: 58px;
@@ -82,4 +89,52 @@ button{
 }
 .spanred{
   color: red;
+}
+
+/* Es la seccion de REGISTRO  */
+.rightregistrermaxwidth{
+  width: 433px;
+  padding-top: 15%;
+}
+
+.textarea{
+  background-color: #150714;
+  color: #914D8B;
+}
+.colores{
+  display: flex;
+}
+.cuadrado, .cuadrado1, .cuadrado2, .cuadrado3, .cuadrado4, .cuadrado5{
+  width: 58px;
+  height: 58px;
+  border: 5px;
+  margin-right: 4px;
+}
+
+.cuadrado{
+  background-color: #F50D5A;
+}
+.cuadrado1{
+  background-color: #FF865C;
+}
+.cuadrado2{
+  background-color: #FFEA5C;
+}
+.cuadrado3{
+  background-color: #00DA76;
+}
+.cuadrado4{
+  background-color: #0096CE;
+}
+.cuadrado5{
+  background-color: #800FFF;
+}
+.btnregistrer{
+  width: 90%;
+  height: 67px;
+  background-color: #00DA76;
+}
+.textobtnregistrer{
+  font-family: 'Silkscreen';
+  font-size: 24px;
 }

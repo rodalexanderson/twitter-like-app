@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getSubscription } from "../../Services/CRUD";
+import { getSubscription } from "../Services/CRUD";
 
 const useTweet = () => {
   const [tweets, setTweets] = useState([]);
