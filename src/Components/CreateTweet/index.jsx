@@ -10,15 +10,20 @@ const CreateTweet = () => {
   const handleCreate = async () => {
     await setData("tweets", { user: email, tweet });
   };
+
   return (
-    <div>
+    <div className="createtweet">
       <textarea
         type="text"
         placeholder="Escribe tu tweet...."
         onChange={handleTweet}
         value={tweet}
+        maxlength="200"
       />
       <button onClick={handleCreate}> Crear Tweet</button>
+      <div>
+          <span className='num'> {tweet.length}</span> / 200 limit
+        </div> 
     </div>
   );
 };

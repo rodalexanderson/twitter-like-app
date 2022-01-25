@@ -13,12 +13,13 @@ const Tweet = ({ user, tweet, id, likes }) => {
   };
 
   return (
-    <>
+    <div className="tweet">
       <h3>{user}</h3>
       <p>{tweet}</p>
       <button onClick={handleLike}>Favorito {likes ? `(${likes})` : ""}</button>
       <button onClick={handleDelete}>Borrar</button>
-    </>
+      <hr/>
+    </div>
   );
 };
 

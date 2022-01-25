@@ -14,7 +14,7 @@ button{
   cursor: pointer;
 }
 button:hover{
-  border: white;
+  border-color: white;
   border: 10px;
 }
 
@@ -137,4 +137,19 @@ button:hover{
 .textobtnregistrer{
   font-family: 'Silkscreen';
   font-size: 24px;
+}
+
+/* HOME */
+
+.createtweet{
+  background-color: #150714;
+  color: #FFFFFF;
+}
+.home{
+  background-color: #2E132C;
+  color: #FFFFFF;
+}
+textarea{
+  background-color: #2F112D;
+  color: #FFFFFF;
 }
