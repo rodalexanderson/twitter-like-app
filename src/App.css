@@ -5,9 +5,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 
+
 .App {
   text-align: center;
   box-sizing: border-box;
+  background-color: #2E132C
 }
 
 html, body, #root, .App {
@@ -139,12 +141,34 @@ button{
 }
 
 /* HOME */
+.home{
+  background-color: #2E132C;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* SECCION DE CREACION DE TWEET */
 .createtweet{
   background-color: #150714;
   color: #FFFFFF;
-  height: 200px;
+  height: 250px;
+  width: 100%;
+}
+.block{
+  cursor: not-allowed;
+  color: rgb(204, 186, 186);
+}
+textarea{
+  margin-top: 2%;
+  margin-bottom: 20px;
+  background-color: #2F112D;
+  color: #FFFFFF;
+  font-family: 'Fira Code', monospace;
+  height: 130px;
+  width: 50%;
+  border: none;
+  
 }
 .textarea{
   display: flex;
@@ -153,35 +177,67 @@ button{
 }
 progress{
   background: #00DA76;
+  animation-timing-function: ease;
 }
-.tweetText{
-  font-family: 'Fira Code', monospace;
-}
-.home{
-  background-color: #2E132C;
-  color: #FFFFFF;
-}
+
+
 
 /* SECCION DE TWEETS */
 .tweet{
   margin-top: 30px;
   margin-bottom: 10px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }
-textarea{
-  margin-top: 5%;
-  background-color: #2F112D;
-  color: #FFFFFF;
-  font-family: 'Fira Code', monospace;
-  height: 40%;
-  width: 50%;
-  border: none;
+.profile{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+
+}
+.continfo{
+  width: 90%;
+  margin-bottom: 0%;
+}
+.username{
+  background-color: crimson;
+  border-radius: 0px 8px  0px 8px;
+}
+.tweetheader, .tweetheaderleftside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.tweetheaderleftside{
+  margin-left: -50px;
 }
 
-
-.fav{
+.tweetText{
+  padding-left: 70px;
+  min-height: max-content;
+  font-family: Silkscreen;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: left;
+  width: 324px;
+  height: 101px;
+}
+.fav, .bin{
   background-color: none;
   background-image: none;
   background: none;
   color: #FFFFFF;
   border: none;
+}
+.fav{
+  display: flex;
+  padding-left: 70px;
+}
+.bin{
+  width: 28px;
 }

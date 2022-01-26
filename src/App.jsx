@@ -9,10 +9,10 @@ function App() {
  const user = useContext(userContext)
 
   return (
-    <div className="App">
-      {user ? <Home />  : (<SignInGoogle /> ) }
-      {/* <Registrer/> */}
-    </div>
+    <div className="App">     
+        {user ? <Home />  : (<SignInGoogle /> ) }
+        {/* <Registrer/> */}
+      </div>
   );
 }
 

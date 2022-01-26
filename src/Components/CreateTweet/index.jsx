@@ -11,8 +11,6 @@ const CreateTweet = () => {
     await setData("tweets", { user: email, tweet });
   };
 
-  const valueTweet = Math.round(tweet.length)
-
   return (
     <div className="createtweet">
       <div className="textarea">
@@ -28,10 +26,11 @@ const CreateTweet = () => {
           {/* <span>{(valueTweet/200) * 100}%</span> */}
         </div>
       </div>
-      <button onClick={handleCreate}> Crear Tweet</button>
       <div>
-          <span> {tweet.length}</span> / 200 limit
-        </div> 
+       <span> {tweet.length}</span> / 200 limit
+      </div> 
+      {tweet.length === 0 ? <button disabled className="block"> Crear Tweet</button> : <button onClick={handleCreate}> Crear Tweet</button> }
+      
     </div>
   );
 };
