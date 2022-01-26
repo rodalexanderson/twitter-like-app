@@ -7,7 +7,6 @@ import SignOutGoogle from "../SignOutGoogle";
     return (
       <div className="home">
         <SignOutGoogle />
-        <h1>Bienvenido a Twitter</h1>
         <CreateTweet />
         <TweetList />
       </div>

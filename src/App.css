@@ -3,8 +3,11 @@
   src: local('Silkscreen'), url(./multimedia/fonts/silkscreen/slkscr.ttf) format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 html, body, #root, .App {
@@ -12,10 +15,6 @@ html, body, #root, .App {
 }
 button{
   cursor: pointer;
-}
-button:hover{
-  border-color: white;
-  border: 10px;
 }
 
 /* Es la seccion de Sign In  */
@@ -141,15 +140,48 @@ button:hover{
 
 /* HOME */
 
+/* SECCION DE CREACION DE TWEET */
 .createtweet{
   background-color: #150714;
   color: #FFFFFF;
+  height: 200px;
+}
+.textarea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+progress{
+  background: #00DA76;
+}
+.tweetText{
+  font-family: 'Fira Code', monospace;
 }
 .home{
   background-color: #2E132C;
   color: #FFFFFF;
 }
+
+/* SECCION DE TWEETS */
+.tweet{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 textarea{
+  margin-top: 5%;
   background-color: #2F112D;
   color: #FFFFFF;
+  font-family: 'Fira Code', monospace;
+  height: 40%;
+  width: 50%;
+  border: none;
+}
+
+
+.fav{
+  background-color: none;
+  background-image: none;
+  background: none;
+  color: #FFFFFF;
+  border: none;
 }
