@@ -148,12 +148,44 @@ button{
   margin-right: auto;
 }
 
+.logoutbtn{
+  height: 35px;
+  width: 116px;
+  margin-left: 60%;
+  border-radius: 0px;
+  background: #F50D5A;
+  font-family: Silkscreen;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: left;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* SECCION DE CREACION DE TWEET */
 .createtweet{
   background-color: #150714;
   color: #FFFFFF;
   height: 250px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.alltext{
+  width: 60%;
+}
+.profileheader{
+  border-radius: 50%;
+  height: 80px;
+  position: absolute;
+  left: 400px;
+  top: 60px;
+
 }
 .block{
   cursor: not-allowed;
@@ -179,19 +211,37 @@ progress{
   background: #00DA76;
   animation-timing-function: ease;
 }
+.postbtn{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 220px;
+}
+.block, .ok{
+  width: 85px;
+  height: 30px;
+  font-family: Silkscreen;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: center;
 
-
+}
+.ok{
+  background-color: #00DA76
+}
 
 /* SECCION DE TWEETS */
 .tweet{
-  margin-top: 30px;
-  margin-bottom: 10px;
-  max-width: 900px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
 }
 .profile{
+  border: 20px;
+  border-color: aqua;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -202,7 +252,7 @@ progress{
   margin-bottom: 0%;
 }
 .username{
-  background-color: crimson;
+  background-color: rgb(70, 243, 35);
   border-radius: 0px 8px  0px 8px;
 }
 .tweetheader, .tweetheaderleftside{
@@ -215,17 +265,18 @@ progress{
 }
 
 .tweetText{
-  padding-left: 70px;
-  min-height: max-content;
-  font-family: Silkscreen;
-  font-size: 16px;
+  min-height: 75px;
+  height: max-content;
+  width: 324px;
+  border-radius: nullpx;
+  font-family: Fira Code;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 16px;
+  font-weight: 450;
+  line-height: 18px;
   letter-spacing: -0.3333333432674408px;
   text-align: left;
-  width: 324px;
-  height: 101px;
+  padding-left: 20px;
 }
 .fav, .bin{
   background-color: none;
@@ -236,7 +287,7 @@ progress{
 }
 .fav{
   display: flex;
-  padding-left: 70px;
+  padding-left: 20px;
 }
 .bin{
   width: 28px;

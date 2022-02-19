@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">     
-        {user ? <Home />  : (<SignInGoogle /> ) }
+        {user ?   <Home/> : (<SignInGoogle /> ) }
         {/* <Registrer/> */}
       </div>
   );
