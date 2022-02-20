@@ -23,7 +23,7 @@ const Tweet = ({ user, tweet, id, likes }) => {
         <div className="tweetheader">
           <div className="tweetheaderleftside">
             <h3 className="username">{user}</h3>
-            <p> --- time  </p>
+            <p> {tweet.dateCreation}  </p>
           </div>
         <button className="bin" onClick={handleDelete}><Bin/></button>
         </div>

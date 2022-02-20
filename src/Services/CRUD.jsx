@@ -12,8 +12,21 @@ import {
 } from "firebase/firestore";
 
 export const getDocRef = (col, id) => doc(db, col, id);
+export const getCollectionRef = (col) => collection(db, col);
 
-const getCollectionRef = (col) => collection(db, col);
+
+// add data
+export const addData = async (col, data) => {
+  const collectionRef = getCollectionRef(col);
+  const docRef = await addDoc(collectionRef, data);
+  return docRef;
+}
+
+//update data
+export const updateData = async (col, id, data) => {
+  const docRef = getDocRef(col, id);
+  await updateDoc(docRef, data);
+};
 
 //get data
 export const getData = async (col) => {
@@ -22,6 +35,7 @@ export const getData = async (col) => {
   const data = snapData.map((doc) => doc.data());
   return data;
 };
+
 //get Data by ID
 export const getDataById = async (col, id) => {
   const docRef = getDocRef(col, id);
@@ -29,6 +43,17 @@ export const getDataById = async (col, id) => {
   const data = snapData.data();
   return data;
 };
+
+//dalete data
+export const deleteData = async (col, id) => {
+  const docRef = getDocRef(col, id);
+  await deleteDoc(docRef);
+};
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 //set data
 export const setData = async (col, data) => {
@@ -42,18 +67,6 @@ export const setDocument = async (col, id, data) => {
   const docRef = getDocRef(col, id);
   const docSnapshot = await setDoc(docRef, data);
   return docSnapshot;
-};
-
-//update data
-export const updateData = async (col, id, data) => {
-  const docRef = getDocRef(col, id);
-  await updateDoc(docRef, data);
-};
-
-//dalete data
-export const deleteData = async (col, id) => {
-  const docRef = getDocRef(col, id);
-  await deleteDoc(docRef);
 };
 
 //subscribe to data

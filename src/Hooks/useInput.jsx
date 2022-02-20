@@ -6,8 +6,13 @@ const useInput = (initialvalue = "") => {
 
     const handleChange = (e) => {
         setInput(e.target.value);
+    };
+
+    const clearInput = () => {
+        setInput("")
     }
-    return [input, handleChange]
+
+    return [input, handleChange, clearInput]
 }
 
 export default useInput

@@ -2,19 +2,30 @@ import React, { useContext } from "react";
 import { userContext } from "../../context/userProvider";
 import { setData } from "../../Services/CRUD";
 import useInput from "../../Hooks/useInput";
-import profile from "../../multimedia/png/ornacia.jpg"
 
 const CreateTweet = () => {
-  const { email } = useContext(userContext);
-  const [tweet, handleTweet] = useInput();
+  const { displayName, uid, color, nameUser, photoUrl } = useContext(userContext);
+  const [tweet, handleTweet, deleteTweet] = useInput();
+  const dateTweet = new Date().toLocaleDateString();
 
   const handleCreate = async () => {
-    await setData("tweets", { user: email, tweet });
+    await setData("tweets", { 
+      tweet,
+      name: displayName,
+      nameUser,  
+      uid, 
+      userLikes: [],
+      likes: 0,
+      dateTweet,
+      color,
+      photo: photoUrl,
+    });
+    deleteTweet();
   };
 
   return (
     <div className="createtweet">
-      <img src={profile} alt="profile pic" width={80} className="profileheader"/>
+      <img src={photoUrl} alt="profile pic" width={80} className="profileheader"/>
       <div className="alltext">
         <div className="textarea">
           <textarea
@@ -27,7 +38,6 @@ const CreateTweet = () => {
           <div>
             <progress value={tweet.length} max={200}/>
             <span> {tweet.length}</span> / 200 limit
-            {/* <span>{(valueTweet/200) * 100}%</span> */}
           </div>
         </div>
         <div>

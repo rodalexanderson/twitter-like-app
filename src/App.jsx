@@ -1,19 +1,18 @@
 import { useContext } from "react";
 import "./App.css";
 import { userContext } from "./context/userProvider";
-import Home  from "./components/Home";
 import SignInGoogle from "./components/SignInGoogle";
-// import Registrer from "./components/Registrer";
+import Register from "./components/Registrer";
+import User from "./components/User";
+
+const Main = () => {
+  const {color} = useContext(userContext);
+  return (color ? <User/> : <Register/>);
+};
 
 function App() {
- const user = useContext(userContext)
-
-  return (
-    <div className="App">     
-        {user ?   <Home/> : (<SignInGoogle /> ) }
-        {/* <Registrer/> */}
-      </div>
-  );
-}
+ const user = useContext(userContext);
+  return (!user ? <SignInGoogle/> : <Main/>);
+};
 
 export default App;
