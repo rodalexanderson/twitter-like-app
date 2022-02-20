@@ -24,7 +24,8 @@ export const addUser = async (user) => {
 export const signInGoogle = async ()=> {
     try{
         const userCredentials = await signInWithPopup(auth, provider);
-        return userCredentials.user
+        addUser(userCredentials.user);
+        return userCredentials.user;
     } catch(err){
         console.log(err.message);
     }
@@ -35,6 +36,6 @@ export const signOutGoogle = async () => {
 }
 
 export const handleAuthChange = async (callback) => {
-    const unSuscribe = await onAuthStateChanged(auth, callback)
+    const unSuscribe = onAuthStateChanged(auth, callback)
     return unSuscribe
 }
