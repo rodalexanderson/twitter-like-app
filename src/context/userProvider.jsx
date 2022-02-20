@@ -11,20 +11,25 @@ export const UserProvider = ({children}) => {
 
     //REVISAR ANTES DE ENVIAR//
 
-    const subscribeToUser = (user) => onSnapshot(getDocRef("users", user.uid), (data) => {
+    const suscribeToUser = (user) => onSnapshot(getDocRef("users", user.uid), (data) => {
         setUser({...user, ...data.data()})
     });
 
 
     useEffect(async () => {
+        let unsuscribeFromUser;
         const unsuscribe = await handleAuthChange((user)=>{
         if (user){
-            setUser(user)
+            unsuscribeFromUser = suscribeToUser(user);
         } else {
-            setUser(null)
+            setUser(null);
+            if (unsuscribeFromUser) unsuscribeFromUser();
         }
-    })
-    return ()=> unsuscribe()
+    });
+    return ()=> {
+        unsuscribe();
+        if (unsuscribeFromUser) unsuscribeFromUser();
+    };
     }, []);
 
     return (
