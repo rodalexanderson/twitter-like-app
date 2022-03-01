@@ -101,7 +101,7 @@ const TweetList = ({
                     handleLike({ tweet }, uid);
                   }}
                 >
-                  {tweet.userLikes ? (
+                  {tweet.userLikes != 0 ? (
                     <Heart className="like" />
                   ) : (
                     <Empty className="unlike" />

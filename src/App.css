@@ -310,7 +310,8 @@ button{
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 30px;
+  flex-direction: column;
+  width: 40px;
 }
 
 .text-nav,

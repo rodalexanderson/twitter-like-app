@@ -21,10 +21,12 @@ const Nav = ({setShowProfile}) => {
         </div>
         <div className="logo-nav" href="#">
           <img src={Logo} alt="Logo devs United" width={100} />
+         <div  href="#" className="text-nav">
+          DEVS_<span>UNITED</span>
+         </div>
         </div>
         <div href="#" className="text-nav">
           <SignOutGoogle/>
-          DEVS_<span>UNITED</span>
         </div>
       </div>
     </div>
