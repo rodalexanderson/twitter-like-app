@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ReactComponent as Logo } from "../../multimedia/SVG/logo.svg";
+import Logo from "../../multimedia/png/logo.png";
 import useInput from "../../Hooks/useInput";
 import { updateData } from "../../Services/CRUD";
 import { userContext } from "../../context/userProvider";
@@ -8,7 +8,7 @@ import User from "../User";
 const Register = () => {
   const { uid, color } = useContext(userContext);
   const [favoriteColor, setFavoriteColor] = useState("");
-  const [nameUser, handleSendNameUser, clearNameUser] = useInput(null);
+  const [nameUser, handleSendNameUser, clearNameUser] = useInput();
 
   const handlePickColor = (e) => {
     setFavoriteColor(e.target.attributes.color.nodeValue);
@@ -95,8 +95,8 @@ const Register = () => {
                 </button>
               </div>
               <p className="text-footer">
-                © 2022 Devs_United by <br />
-                Mario A Conti - <span>BETA</span>
+                © 2022 Devs_United <br />
+               <span>BETA</span>
               </p>
             </div>
           </div>

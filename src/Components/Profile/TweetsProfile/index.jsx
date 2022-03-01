@@ -1,6 +1,7 @@
 import React from "react";
-import { UserPosts } from "../UserProfile/Userposts";
-import { UserFavorites } from "../UserProfile/UserFavorites";
+import UserPosts from "../UserPosts";
+import UserFavorites from "../UserFav";
+
 
  const TweetsProfile = ({
   showPosts,

@@ -1,6 +1,7 @@
 import { signOutGoogle } from "../../Services/authGoogle"
 import Logout from "../../multimedia/png/logout.png"
 
+
 const SignOutGoogle = () => {
     return( 
         <button onClick={signOutGoogle} className="logoutbtn">

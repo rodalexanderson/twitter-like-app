@@ -3,7 +3,7 @@ import TweetsProfile from "./TweetsProfile";
 import UserProfile from "./UserProfile";
 import NavProfile from "./NavProfile";
 
-export const Profile = ({
+const Profile = ({
   setShowProfile,
   showPosts,
   setShowPosts,
@@ -29,3 +29,5 @@ export const Profile = ({
     </div>
   );
 };
+
+export default Profile;

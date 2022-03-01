@@ -54,13 +54,12 @@ export const deleteData = async (col, id) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-//set data
-export const setData = async (col, data) => {
-  const collectionRef = getCollectionRef(col);
-  const docRef = await addDoc(collectionRef, data);
-  return docRef;
-};
+//set Data
+// export const setData = async (col, data) => {
+//   const collectionRef = getCollectionRef(col);
+//   const docRef = await addDoc(collectionRef, data);
+//   return docRef;
+// };
 
 //set Document
 export const setDocument = async (col, id, data) => {

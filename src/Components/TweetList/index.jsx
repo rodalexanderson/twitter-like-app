@@ -7,7 +7,7 @@
 //   const tweets = useTweet();
 
 //   return (
-//     <div>
+//     <div className="tweetlist">
 //       {tweets.map((tweet) => (
 //         <Tweet {...tweet} key={tweet.id} />
 //       ))}
@@ -34,7 +34,7 @@ const TweetList = ({
   setShowFavorites,
 }) => {
   const [listaTweets, setListaTweets] = useState([]);
-  const { uid } = useContext(userContext);
+  const { uid, photoURL } = useContext(userContext);
 
   useEffect(() => {
     const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -65,9 +65,9 @@ const TweetList = ({
               className={`${uid === tweet.uid && "cursor"} image-profile`}
             >
               <img
-                src={tweet.photo}
+                src={photoURL}
                 className="photo-profile"
-                alt="profile image"
+                alt="profile"
               />
             </div>
             <div className="post-info">
@@ -101,15 +101,15 @@ const TweetList = ({
                     handleLike({ tweet }, uid);
                   }}
                 >
-                  {tweet.userLikes.includes(uid) ? (
+                  {tweet.userLikes ? (
                     <Heart className="like" />
                   ) : (
                     <Empty className="unlike" />
                   )}
                 </button>
-                <p className={tweet.userLikes.includes(uid) ? "favorite" : ""}>
+                <p className={tweet.userLikes ? "favorite" : ""}>
                   {tweet.likes}
-                </p>
+               </p>
               </div>
             </div>
           </div>

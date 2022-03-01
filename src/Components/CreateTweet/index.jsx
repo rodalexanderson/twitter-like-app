@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { userContext } from "../../context/userProvider";
-import { setData } from "../../Services/CRUD";
+import { addData } from "../../Services/CRUD";
 import useInput from "../../Hooks/useInput";
 
 const CreateTweet = () => {
-  const { displayName, uid, color, nameUser, photoUrl } = useContext(userContext);
+  const { displayName, uid, color, nameUser } = useContext(userContext);
   const [tweet, handleTweet, deleteTweet] = useInput();
   const dateTweet = new Date().toLocaleDateString();
 
   const handleCreate = async () => {
-    await setData("tweets", { 
+    await addData("tweets", { 
       tweet,
       name: displayName,
       nameUser,  
@@ -18,14 +18,14 @@ const CreateTweet = () => {
       likes: 0,
       dateTweet,
       color,
-      photo: photoUrl,
+      // photo: photoUrl,
     });
     deleteTweet();
   };
 
   return (
     <div className="createtweet">
-      <img src={photoUrl} alt="profile pic" width={80} className="profileheader"/>
+      {/* <img src={photoUrl} alt="profile pic" width={80} className="profileheader"/> */}
       <div className="alltext">
         <div className="textarea">
           <textarea
@@ -33,7 +33,7 @@ const CreateTweet = () => {
             placeholder="Escribe tu tweet...."
             onChange={handleTweet}
             value={tweet}
-            maxlength="200"
+            maxLength="200"
           />
           <div>
             <progress value={tweet.length} max={200}/>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CreateTweet from "../CreateTweet";
 import TweetList from "../TweetList";
 import Nav from "../Nav";
-
+import Profile from "../Profile";
 // import { Profile } from "./Profile/index";
 
 const User = () => {

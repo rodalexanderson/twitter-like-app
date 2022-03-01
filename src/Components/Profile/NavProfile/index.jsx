@@ -8,10 +8,10 @@ import { ReactComponent as Back } from "../../../multimedia/SVG/back.svg";
   return (
     <div className="nav">
       <div className="contain-nav">
+        <SignOutGoogle />
         <div onClick={() => setShowProfile(false)} className="back">
           <Back className="back-svg" /> {nameUser.toUpperCase()}
         </div>
-        <SignOutGoogle />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from
 import { getDataById, getDocRef } from "./CRUD";
 import { setDoc } from "firebase/firestore";
 
-export const provider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 
 export const addUser = async (user) => {
     const {uid, displayName, email, photoURL} = user;

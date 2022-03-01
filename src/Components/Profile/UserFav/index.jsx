@@ -6,6 +6,7 @@ import { handleLike } from "../../../Functions";
 import { ReactComponent as Solid } from "../../../multimedia/SVG/solid.svg";
 import { ReactComponent as Empty } from "../../../multimedia/SVG/empty.svg";
 import { ReactComponent as Bin } from "../../../multimedia/SVG/bin.svg";
+import { deleteData } from "../../../Services/CRUD";
 
 // import { handleDelete } from "../../../TweetList/functions"; REVISAR SI FUNCIONA DELETE
 
@@ -37,7 +38,7 @@ const UserFavorites = ({
   };
 
   const handleDelete = async () => {
-    await deleteData("tweets", id);
+    await deleteData("tweets", uid);
   };
 
   return (

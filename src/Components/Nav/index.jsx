@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { userContext } from "../../context/userProvider";
 import Logo from "../../multimedia/png/logo.png";
+import SignOutGoogle from "../SignOutGoogle";
 
 const Nav = ({setShowProfile}) => {
   const { photoURL, color } = useContext(userContext);
@@ -14,14 +15,15 @@ const Nav = ({setShowProfile}) => {
           <img
             src={photoURL}
             className="photo"
-            alt="profile image"
+            alt="profile"
             style={{ borderColor: `${color}` }}
           />
         </div>
         <div className="logo-nav" href="#">
-          <img src={Logo} alt="Logo devs United" />
+          <img src={Logo} alt="Logo devs United" width={100} />
         </div>
         <div href="#" className="text-nav">
+          <SignOutGoogle/>
           DEVS_<span>UNITED</span>
         </div>
       </div>
