@@ -5,13 +5,12 @@ import { getCollectionRef } from "../../../Services/CRUD";
 import Logo from "../../../multimedia/png/logo.png";
 import SignOutGoogle from "../../SignOutGoogle";
 
-const ProfileFake = ({
+const ProfileMain = ({
     setShowProfile,
-    showFavorites,
     setShowFavorites,
   }) => {
     const [listaTweets, setListaTweets] = useState([]);
-    const { uid, photoURL, color, nameUser } = useContext(userContext);
+    const { photoURL, color, nameUser } = useContext(userContext);
   
     useEffect(() => {
       const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -25,13 +24,12 @@ const ProfileFake = ({
         unSuscribe();
       };
     }, []);
-  
 
-    
+        // Funcion ligada a los botones para mostrar favoritos
       const handleSetShowFavorites = () => {
         setShowFavorites(true);
       };
-
+        // Funcion ligada a los botones para mostrar todos los mensajes
       const handleSetShowPosts = () => {
         setShowFavorites(false);
       };
@@ -40,10 +38,10 @@ const ProfileFake = ({
         
       <div className="container-tweet-list">
 
-          {/****** EMPIEZA NAV BAR  *******/}
+          {/********** EMPIEZA NAV BAR  *************/}
               <div className="nav">
             <div className="contain-nav">
-                {/* esto tiene q hacer el link hacia el profile */}
+                {/* Funcion para llegar a */}
                 <div onClick={()=>setShowProfile(!true)} className="image"> <p className="backtofeed"> Back to Feed </p></div>
                 <div className="logo-nav" href="#">
                     <img src={Logo} alt="Logo devs United" width={100} />
@@ -66,7 +64,6 @@ const ProfileFake = ({
                       className="profilephoto"
                       alt="profile"
                     />
-
                 </div>
                 <div
                           className="user-name"
@@ -78,17 +75,18 @@ const ProfileFake = ({
         {/**********  TERMINA NAVBAR ******************/}
 
         {/**********  EMPIEZAN BOTONES ******************/}   
-
-        <button onClick={()=>handleSetShowPosts()}>
-        Show all!
-        </button>
-        <button onClick={()=>handleSetShowFavorites()}>
-        Show only favourites!
-        </button>
+        <div className="profilebuttonarea">
+          <button  className="profilebtn" onClick={()=>handleSetShowPosts()}>
+          Show all!
+          </button>
+          <button  className="profilebtn" onClick={()=>handleSetShowFavorites()}>
+          Show only favourites!
+          </button>
+        </div>
         {/**********  TERMINAN BOTONES ******************/} 
-        
+
       </div>
     );
   };
 
-export default ProfileFake;
+export default ProfileMain;

@@ -1,11 +1,8 @@
 import React from "react";
-// import TweetsProfile from "./TweetsProfile";
-// import UserProfile from "./UserProfile";
-// import NavProfile from "./NavProfile";
-import ProfileFavourites from "../Routes/ProfileFav";
-import ProfilePosts from "../Routes/ProfilePosts"
+import ProfileFavourites from "../Profile/ProfileFav";
+import ProfilePosts from "../Profile/ProfilePosts"
 
-const Profile = ({
+const ProfileTweets = ({
   setShowProfile,
   showPosts,
   setShowPosts,
@@ -24,4 +21,4 @@ const Profile = ({
         setShowFavorites={setShowFavorites}
   />
 }
-export default Profile;
+export default ProfileTweets;
