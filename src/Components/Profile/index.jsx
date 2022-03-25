@@ -1,7 +1,9 @@
 import React from "react";
-import TweetsProfile from "./TweetsProfile";
-import UserProfile from "./UserProfile";
-import NavProfile from "./NavProfile";
+// import TweetsProfile from "./TweetsProfile";
+// import UserProfile from "./UserProfile";
+// import NavProfile from "./NavProfile";
+import ProfileFavourites from "../Routes/ProfileFav";
+import ProfilePosts from "../Routes/ProfilePosts"
 
 const Profile = ({
   setShowProfile,
@@ -10,24 +12,16 @@ const Profile = ({
   showFavorites,
   setShowFavorites,
 }) => {
-  return (
-    <div className="profile-container">
-      <NavProfile setShowProfile={setShowProfile} />
-      <UserProfile
+  return showFavorites ? <ProfileFavourites
         showPosts={showPosts}
         setShowPosts={setShowPosts}
         showFavorites={showFavorites}
         setShowFavorites={setShowFavorites}
-      />
-      <TweetsProfile
+  /> : <ProfilePosts
         showPosts={showPosts}
-        showFavorites={showFavorites}
-        setShowProfile={setShowProfile}
         setShowPosts={setShowPosts}
+        showFavorites={showFavorites}
         setShowFavorites={setShowFavorites}
-      />
-    </div>
-  );
-};
-
+  />
+}
 export default Profile;
