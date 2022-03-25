@@ -2,7 +2,6 @@ import React from "react";
 import UserPosts from "../UserPosts";
 import UserFavorites from "../UserFav";
 
-
  const TweetsProfile = ({
   showPosts,
   showFavorites,

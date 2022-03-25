@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import CreateTweet from "../CreateTweet";
 import TweetList from "../TweetList";
 import Nav from "../Nav";
-import Profile from "../Profile";
-// import { Profile } from "./Profile/index";
+// import Profile from "../Profile";
+import ProfileFake from "../Routes/Profile";
 
 const User = () => {
   const [showProfile, setShowProfile] = useState(false);
@@ -11,14 +11,11 @@ const User = () => {
   const [showFavorites, setShowFavorites] = useState(false);
 
   return showProfile ? (
-    <Profile
-      showProfile={showProfile}
+      <ProfileFake
       setShowProfile={setShowProfile}
-      showPosts={showPosts}
       setShowPosts={setShowPosts}
-      showFavorites={showFavorites}
       setShowFavorites={setShowFavorites}
-    />
+      />
   ) : (
     <>
       <Nav showProfile={showProfile} setShowProfile={setShowProfile} />

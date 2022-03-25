@@ -1,22 +1,3 @@
-// import React from "react";
-// import Tweet from "../Tweet";
-// import useTweet from "../../Hooks/useTweets";
-
-
-// const TweetList = () => {
-//   const tweets = useTweet();
-
-//   return (
-//     <div className="tweetlist">
-//       {tweets.map((tweet) => (
-//         <Tweet {...tweet} key={tweet.id} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default TweetList;
-
 import { useEffect, useState, useContext } from "react";
 import { userContext } from "../../context/userProvider";
 import { onSnapshot } from "firebase/firestore";

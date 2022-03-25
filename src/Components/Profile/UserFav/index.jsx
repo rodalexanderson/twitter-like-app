@@ -3,10 +3,12 @@ import { userContext } from "../../../context/userProvider";
 import { onSnapshot } from "firebase/firestore";
 import { getCollectionRef } from "../../../Services/CRUD";
 import { handleLike } from "../../../Functions";
-import { ReactComponent as Solid } from "../../../multimedia/SVG/solid.svg";
+import { ReactComponent as Heart } from "../../../multimedia/SVG/solid.svg";
 import { ReactComponent as Empty } from "../../../multimedia/SVG/empty.svg";
 import { ReactComponent as Bin } from "../../../multimedia/SVG/bin.svg";
-import { deleteData } from "../../../Services/CRUD";
+// import { deleteData } from "../../../Services/CRUD";
+import { handleDelete } from "../../../Functions";
+
 
 // import { handleDelete } from "../../../TweetList/functions"; REVISAR SI FUNCIONA DELETE
 
@@ -16,7 +18,7 @@ const UserFavorites = ({
   setShowFavorites,
 }) => {
   const [listaTweets, setListaTweets] = useState([]);
-  const { uid } = useContext(userContext);
+  const { uid, photoURL } = useContext(userContext);
 
   useEffect(() => {
     const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -37,9 +39,9 @@ const UserFavorites = ({
     setShowFavorites(false);
   };
 
-  const handleDelete = async () => {
-    await deleteData("tweets", uid);
-  };
+  // const handleDelete = async () => {
+  //   await deleteData("tweets", uid);
+  // };
 
   return (
     <div className="container-tweet-list">
@@ -52,9 +54,9 @@ const UserFavorites = ({
                 className="image-profile"
               >
                 <img
-                  src={tweet.photo}
+                  src={photoURL}
                   className="photo-profile"
-                  alt="profile image"
+                  alt="profile"
                 />
               </div>
               <div className="post-info">
@@ -89,7 +91,7 @@ const UserFavorites = ({
                     }}
                   >
                     {tweet.userLikes.includes(uid) ? (
-                      <Solid className="like" />
+                      <Heart className="like" />
                     ) : (
                       <Empty className="unlike" />
                     )}
