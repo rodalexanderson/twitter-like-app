@@ -16,7 +16,8 @@ const ProfileFavourites = ({
     setShowFavorites,
 }) => {
     const [listaTweets, setListaTweets] = useState([]);
-    const { uid, color, nameUser, dateCreation } = useContext(userContext);
+    const { uid, color, nameUser } = useContext(userContext);
+    const dateTweet = new Date().toLocaleDateString();
   
     useEffect(() => {
       const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -60,7 +61,7 @@ const ProfileFavourites = ({
                         >
                           {nameUser}
                         </div>
-                        <p className="date">- {dateCreation}</p>
+                        <p className="date">-{dateTweet}</p>
                       </div>
                       {uid === tweet.uid && (
                         <button

@@ -80,7 +80,7 @@ const ProfileMain = ({
           Show all!
           </button>
           <button  className="profilebtn" onClick={()=>handleSetShowFavorites()}>
-          Show only favourites!
+          Show only my favourites!
           </button>
         </div>
         {/**********  TERMINAN BOTONES ******************/} 

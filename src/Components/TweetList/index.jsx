@@ -16,6 +16,7 @@ const TweetList = ({
 }) => {
   const [listaTweets, setListaTweets] = useState([]);
   const { uid, photoURL } = useContext(userContext);
+  const dateTweet = new Date().toLocaleDateString();
 
   useEffect(() => {
     const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -60,7 +61,7 @@ const TweetList = ({
                   >
                     {tweet.nameUser}
                   </div>
-                  <p className="date">- {tweet.dateCreation}</p>
+                  <p className="date">- {dateTweet}</p>
                 </div>
                 {uid === tweet.uid && (
                   <button

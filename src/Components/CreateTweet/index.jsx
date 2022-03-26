@@ -18,22 +18,21 @@ const CreateTweet = () => {
       likes: 0,
       dateTweet,
       color,
-      // photo: photoUrl,
     });
     deleteTweet();
   };
 
   return (
     <div className="createtweet">
-      {/* <img src={photoUrl} alt="profile pic" width={80} className="profileheader"/> */}
       <div className="alltext">
         <div className="textarea">
           <textarea
             type="text"
-            placeholder="Escribe tu tweet...."
+            placeholder="Write your message"
             onChange={handleTweet}
             value={tweet}
             maxLength="200"
+            className="createtextarea"
           />
           <div>
             <progress value={tweet.length} max={200}/>

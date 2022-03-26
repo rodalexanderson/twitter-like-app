@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { userContext } from "../../context/userProvider";
 import Logo from "../../multimedia/png/logo.png";
 import SignOutGoogle from "../SignOutGoogle";
-// import {Link} from "react-router-dom"
 
 const Nav = ({setShowProfile}) => {
   const { photoURL, color } = useContext(userContext);
@@ -11,8 +10,7 @@ const Nav = ({setShowProfile}) => {
   return (
     <div className="nav">
       <div className="contain-nav">
-        {/* esto tiene q hacer el link hacia el profile */}
-        {/* <Link to="/profile">Profile</Link> */}
+        {/* Funcion para ir al Profile */}
         <div onClick={()=>setShowProfile(true)} className="image">
           <img
             src={photoURL}
@@ -22,7 +20,7 @@ const Nav = ({setShowProfile}) => {
           />
         </div>
         <div className="logo-nav" href="#">
-          <img src={Logo} alt="Logo devs United" width={100} />
+          <img src={Logo} alt="Logo devs United" width={80} />
          <div  href="#" className="text-nav">
           DEVS_<span>UNITED</span>
          </div>

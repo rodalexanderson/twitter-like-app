@@ -301,9 +301,9 @@ button{
   border-radius: 50px;
   border: 2px solid;
   cursor: pointer;
-  margin-left: 15px;
-  height: 25px;
-  width: 25px;
+  height: 55px;
+  width: 55px;
+  margin-top: -15px;
 }
 
 .logo-nav {
@@ -431,6 +431,8 @@ button{
 .date {
   margin: auto;
   margin-left: 10px;
+  font-family: Silkscreen;
+  font-size: small;
 }
 
 .image-profile {
@@ -527,6 +529,12 @@ button{
 .alltext{
   width: 60%;
 }
+.createtextarea{
+  width: 60%;
+  height: 120px;
+  background-color: #2E132C;
+  color: wheat;
+}
 .profileheader{
   border-radius: 50%;
   height: 80px;
@@ -539,21 +547,16 @@ button{
   cursor: not-allowed;
   color: rgb(204, 186, 186);
 }
-textarea{
-  margin-top: 2%;
-  margin-bottom: 20px;
-  background-color: #2F112D;
-  color: #FFFFFF;
-  font-family: 'Fira Code', monospace;
-  height: 130px;
-  width: 50%;
-  border: none;
-  
-}
+
+
+
 .textarea{
+  margin-top: 30px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Fira Code', monospace;
 }
 progress{
   background: #00DA76;
