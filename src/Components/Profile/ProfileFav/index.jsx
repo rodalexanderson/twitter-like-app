@@ -10,9 +10,7 @@ import { handleDelete } from "../../../Functions";
 
 const ProfileFavourites = ({
     setShowProfile,
-    showPosts,
     setShowPosts,
-    showFavorites,
     setShowFavorites,
 }) => {
     const [listaTweets, setListaTweets] = useState([]);
@@ -34,7 +32,6 @@ const ProfileFavourites = ({
 
     const handleInProfile = () => {
       setShowProfile(true);
-      setShowPosts(true);
       setShowFavorites(false);
     };
 

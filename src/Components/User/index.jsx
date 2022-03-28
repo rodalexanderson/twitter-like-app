@@ -7,20 +7,17 @@ import ProfileTweets from "../Profile";
 
 const User = () => {
   const [showProfile, setShowProfile] = useState(false);
-  const [showPosts, setShowPosts] = useState(true);
   const [showFavorites, setShowFavorites] = useState(false);
 
   return showProfile ? (
     <>
       <ProfileMain
       setShowProfile={setShowProfile}
-      setShowPosts={setShowPosts}
       setShowFavorites={setShowFavorites}
       showFavorites={showFavorites}
       />
       <ProfileTweets
       setShowProfile={setShowProfile}
-      setShowPosts={setShowPosts}
       setShowFavorites={setShowFavorites}
       showFavorites={showFavorites}
       />
@@ -31,7 +28,6 @@ const User = () => {
       <CreateTweet />
       <TweetList
         setShowProfile={setShowProfile}
-        setShowPosts={setShowPosts}
         setShowFavorites={setShowFavorites}
       />
     </>
