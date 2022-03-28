@@ -25,7 +25,7 @@ const Register = () => {
   return (
     <>
       {!color ? (
-        <div>
+        <div className="registrer">
           <div className="login-container">
             <div className="logo-container">
             <img src={Logo} alt="Logo Devs United" className="logo"/>
@@ -94,9 +94,8 @@ const Register = () => {
                   CONTINUE
                 </button>
               </div>
-              <p className="text-footer">
-                © 2022 Devs_United <br />
-               <span>BETA</span>
+              <p className="text-footer-registrer">
+                © 2022 Devs_United <span className="redfooter">BETA</span>
               </p>
             </div>
           </div>
