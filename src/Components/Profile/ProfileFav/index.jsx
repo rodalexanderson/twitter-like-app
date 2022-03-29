@@ -14,7 +14,7 @@ const ProfileFavourites = ({
     setShowFavorites,
 }) => {
     const [listaTweets, setListaTweets] = useState([]);
-    const { uid, color, nameUser } = useContext(userContext);
+    const { uid, color, nameUser, userLikes } = useContext(userContext);
     const dateTweet = new Date().toLocaleDateString();
   
     useEffect(() => {
@@ -42,7 +42,7 @@ const ProfileFavourites = ({
 
         {listaTweets.map((tweet) => {
           return (
-            uid === tweet.uid && (tweet.userLikes.includes(uid) ) && (
+            tweet.userLikes == uid && (
                 <div className="tweet-container" key={tweet.id}>
                   <div
                     onClick={uid === tweet.uid ? handleInProfile : null}
@@ -51,12 +51,18 @@ const ProfileFavourites = ({
                   </div>
                   <div className="post-info">
                     <div className="user-name-date">
+                    <img
+                        src={tweet.photo}
+                        className="photo-profile"
+                        alt="profile"
+                      />
                       <div className="flex-row">
+                      
                         <div
                           className="user-name"
                           style={{ backgroundColor: color }}
                         >
-                          {nameUser}
+                          {tweet.nameUser}
                         </div>
                         <p className="date">-{dateTweet}</p>
                       </div>

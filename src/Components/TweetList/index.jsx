@@ -14,7 +14,7 @@ const TweetList = ({
   setShowFavorites,
 }) => {
   const [listaTweets, setListaTweets] = useState([]);
-  const { uid, photoURL } = useContext(userContext);
+  const { uid } = useContext(userContext);
   const dateTweet = new Date().toLocaleDateString();
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const TweetList = ({
   return (
     <div className="container-tweet-list">
       {listaTweets.map((tweet) => {
+        console.log({tweet})
         return (
           <div className="tweet-container" key={tweet.id}>
             <div
@@ -45,10 +46,11 @@ const TweetList = ({
               className={`${uid === tweet.uid && "cursor"} image-profile`}
             >
               <img
-                src={photoURL}
+                src={tweet.photo}
                 className="photo-profile"
                 alt="profile"
               />
+              
             </div>
             <div className="post-info">
               <div className="user-name-date">

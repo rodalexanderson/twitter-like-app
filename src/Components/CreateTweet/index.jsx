@@ -4,7 +4,7 @@ import { addData } from "../../Services/CRUD";
 import useInput from "../../Hooks/useInput";
 
 const CreateTweet = () => {
-  const { displayName, uid, color, nameUser } = useContext(userContext);
+  const { displayName, uid, color, nameUser, photoURL } = useContext(userContext);
   const [tweet, handleTweet, deleteTweet] = useInput();
   const dateTweet = new Date().toLocaleDateString();
 
@@ -18,6 +18,7 @@ const CreateTweet = () => {
       likes: 0,
       dateTweet,
       color,
+      photo: photoURL,
     });
     deleteTweet();
   };

@@ -18,7 +18,7 @@ const Tweet = ({ user, tweet, id, likes }) => {
 
   return (
     <div className="tweet">
-        <img src={profile} alt="profile pic" width={60} className="profile"/>
+        <img src={tweet.profile} alt="profile pic" width={60} className="profile"/>
       <div className="continfo">
         <div className="tweetheader">
           <div className="tweetheaderleftside">

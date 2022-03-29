@@ -7,7 +7,7 @@ const SignInGoogle = () => {
         <>
         <div className="signin">
             <div className="leftsidesignin">
-                <img src={Logo} alt="Logo Devs United" className="logo"/>
+                <img src={Logo} alt="Logo Devs United" className="logo-inicio"/>
             </div>
             <div className="rightsidesignin">
                 <div className="rightsigninmaxwidth">
