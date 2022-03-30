@@ -2,10 +2,7 @@
   font-family: 'Silkscreen';
   src: local('Silkscreen'), url(./multimedia/fonts/silkscreen/slkscr.ttf) format('truetype');
 }
-
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
-
-
 
 html, body, #root, .App, .main, Main {
   height: 100%;
