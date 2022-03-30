@@ -21,7 +21,7 @@ export const addUser = async (user) => {
 };
 
 // SE USA POPUP PARA LOGIN
-export const signInGoogle = async ()=> {
+export const lognInGoogle = async ()=> {
     try{
         const userCredentials = await signInWithPopup(auth, provider);
         addUser(userCredentials.user);

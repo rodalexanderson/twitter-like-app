@@ -1,8 +1,8 @@
-import { signInGoogle } from "../../Services/authGoogle"
+import { lognInGoogle } from "../../Services/authGoogle"
 import Logo from "../../multimedia/SVG/logo.svg"
 import Google from "../../multimedia/png/google.png"
 
-const SignInGoogle = () => {
+const signInGoogle = () => {
     return( 
         <>
         <div className="signin">
@@ -15,7 +15,7 @@ const SignInGoogle = () => {
                     <h2 className="h2signin">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
                     <div className="button">
                         <img src={Google} alt="google icon" className="google" />
-                        <button onClick={signInGoogle} className="btngoogle">
+                        <button onClick={lognInGoogle} className="btngoogle">
                             <p className="textobtnsignin">Sign In With Google</p>
                         </button>
                     </div>
@@ -27,4 +27,4 @@ const SignInGoogle = () => {
     )
 }
 
-export default SignInGoogle
+export default signInGoogle
