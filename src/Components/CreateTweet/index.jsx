@@ -35,9 +35,11 @@ const CreateTweet = () => {
             maxLength="200"
             className="createtextarea"
           />
-          <div>
+          <div className="progressbar">
             <progress value={tweet.length} max={200}/>
-            <span> {tweet.length}</span> / 200 limit
+            <div>
+              <p> {tweet.length} / 200 limit </p>
+            </div>
           </div>
         </div>
         <div>

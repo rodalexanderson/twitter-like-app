@@ -9,6 +9,7 @@
 
 html, body, #root, .App, .main, Main {
   height: 100%;
+  width: 100%;
   background-color: #150714;
 }
 
@@ -23,9 +24,7 @@ button{
   cursor: pointer;
 }
 
-/* Es la seccion de Sign In  */
-
-/* signin hace referencia a toda la pagina */
+/**************** Es la seccion de Sign In  **********************/
 .signin{
   width: 100%;
   background-color: #2E132C;
@@ -42,7 +41,7 @@ button{
   top: 0%;
   bottom: 0%;
 }
-/* Left Side of Sign In Page */
+
 .logo, .logo-inicio{
   height: 342px;
   width: 526px;
@@ -54,7 +53,6 @@ button{
   padding-top:30%;
 }
 
-/* Right Side of Sign In Page */
 .rightsigninmaxwidth{
   width: 433px;
   padding-top: 35%;
@@ -101,7 +99,7 @@ button{
 
 
 
-/* Es la seccion de REGISTRO  */
+/*************** Es la seccion de REGISTRO  ******************/
 .registrer{
   background-color: #2E132C;
 }
@@ -252,7 +250,6 @@ button{
   color: red;
   
 }
-/* ========================================================== */
 
 @media screen and (max-width: 900px) {
   .signin, .leftsidesignin{
@@ -337,12 +334,14 @@ button{
   }
 }
 
-/* NAV */
+/************** NAV ***************************/
 .nav {
   align-items: center;
   display: flex;
   justify-content: center;
   height: 100px;
+  width: 100%;
+  background-color: #150714;
 }
 
 .contain-nav {
@@ -396,20 +395,29 @@ button{
 }
 
 @media screen and (max-width: 900px) {
-  .contain-nav {
-    width: 330px;
+  .contain-nav, .nav {
+    width: 80%;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .photo {
-    margin-left: 38px;
+    margin-left: 0px;
+    width: 30px;
+    height: 30px;
   }
   .photo-profile{
     margin-left: 0;
   }
+  .logoutbtn{
+    width: 30px;
+    font-size: smaller;
+  }
 }
 
 
-/* HOME */
+/********************* HOME *****************/
 .home{
   background-color: #2E132C;
   color: #FFFFFF;
@@ -434,12 +442,7 @@ button{
   justify-content: space-evenly;
   align-items: center;
 }
-/* NAV */
-.nav{
-  background-color: #150714;
-}
-
-/* Tweet List */
+/***************** Tweet List ************************/
 .container-tweet-list{
   background-color: #150714;
   color: white;
@@ -530,12 +533,6 @@ button{
   width: 25px;
 }
 
-.trush-svg,
-.like,
-.unlike {
-  cursor: pointer;
-}
-
 .likes-container {
   display: flex;
   margin-right: auto;
@@ -572,6 +569,9 @@ button{
 }
 
 @media screen and (max-width: 900px) {
+  .container-tweet-list, .createtweet, .nav{
+    width: 90%;
+  }
   .tweet-container {
     width: 320px;
   }
@@ -581,7 +581,7 @@ button{
   }
 }
 
-/* SECCION DE CREACION DE TWEET */
+/************* SECCION DE CREACION DE TWEET *******************/
 .createtweet{
   background-color: #150714;
   color: #FFFFFF;
@@ -613,8 +613,6 @@ button{
   color: rgb(204, 186, 186);
 }
 
-
-
 .textarea{
   margin-top: 30px;
   margin-bottom: 0px;
@@ -632,6 +630,38 @@ progress{
   justify-content: flex-end;
   padding-right: 220px;
 }
+
+@media screen and (max-width: 900px) {
+  .alltext{
+    width: 100%;
+  }
+  .progressbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+  progress{
+    width: 40%;
+  }
+  .postbtn {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .progressbar{
+    width: 80%;
+    font-size: small;
+    display: flex;
+  }
+}
 .block, .ok{
   width: 85px;
   height: 30px;
@@ -648,7 +678,7 @@ progress{
   background-color: #00DA76
 }
 
-/* SECCION DE TWEETS */
+/**************** SECCION DE TWEETS *****************/
 .tweet{
   max-width: 700px;
   margin-left: auto;
@@ -710,7 +740,7 @@ progress{
   width: 28px;
 }
 
-/* Seccion Profile */
+/******************** Seccion Profile **********************/
 .backtofeed{
   font-family: 'Silkscreen';
   cursor: pointer;
