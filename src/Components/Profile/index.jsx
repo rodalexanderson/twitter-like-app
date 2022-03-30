@@ -1,6 +1,6 @@
 import React from "react";
-import ProfileFavourites from "../Profile/ProfileFav";
-import ProfilePosts from "../Profile/ProfilePosts"
+import ProfileFavourites from "./ProfileFav";
+import ProfilePosts from "./ProfilePosts"
 
 const ProfileTweets = ({
   setShowProfile,
