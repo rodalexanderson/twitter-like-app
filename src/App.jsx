@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import "./App.css";
 import { userContext } from "./context/userProvider";
-import SignInGoogle from "./components/SignInGoogle";
-import Register from "./components/Registrer";
-import User from "./components/User";
+import SignInGoogle from "./Components/SignInGoogle";
+import Register from "./Components/Registrer";
+import User from "./Components/User";
 
 
 const Main = () => {
