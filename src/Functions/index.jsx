@@ -1,4 +1,4 @@
-import React from "react"
+import swal from "sweetalert";
 import { arrayRemove } from "firebase/firestore";
 import { updateData } from "../Services/CRUD";
 import { deleteData } from "../Services/CRUD";
@@ -22,6 +22,17 @@ export const handleLike = async ({tweet}, uid) => {
     }
 };
 
-export const handleDelete = async (id) => {
-    await deleteData("tweets", id);
+export const handleDelete = (id) => {
+    swal({
+        title: "Want to delete this tweet?",
+        text: "We won't be able to recover your tweet",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true, 
+    }).then((willDelete) => {
+        if (willDelete) {
+            swal("Done! Tweet has been deleted");
+            deleteData("tweets", id);
+        }
+    });
   };
