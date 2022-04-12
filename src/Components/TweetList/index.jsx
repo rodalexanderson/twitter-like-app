@@ -15,7 +15,7 @@ const TweetList = ({
 }) => {
   const [listaTweets, setListaTweets] = useState([]);
   const { uid } = useContext(userContext);
-  const dateTweet = new Date().toLocaleDateString();
+  // const dateTweet = new Date().toLocaleDateString();
 
   useEffect(() => {
     const unSuscribe = onSnapshot(getCollectionRef("tweets"), (data) => {
@@ -61,13 +61,14 @@ const TweetList = ({
                   >
                     {tweet.nameUser}
                   </div>
-                  <p className="date">- {dateTweet}</p>
+                  <p className="date">- {tweet.dateTweet}</p>
                 </div>
                 {uid === tweet.uid && (
                   <button
                     className="trush-svg"
                     title="Borrar tweet"
                     onClick={() => handleDelete(tweet.id)}
+                    // onClick={() => handleDelete(tweet.id)}
                   >
                     <Bin />
                   </button>
